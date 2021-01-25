@@ -1,6 +1,119 @@
 @import "./variables";
 
-
 body {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
   font-family: $kumbhSans;
+  background-color: $Darkcyan;
+  display: block;
+  margin: 0 auto;
+
+  @include flexCenter();
+}
+
+
+.background-top {
+  position: fixed;
+  left: -250px;
+  top: -550px;
+}
+
+.background-bottom {
+  position: fixed;
+  right: -200px;
+  bottom: -600px;
+  opacity: 0.8;
+}
+
+.card {
+  width: 350px;
+  height: 375px;
+  position: relative;
+  display: block;
+  margin: 0;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  box-shadow: 2px 10px 5px hsla(229, 23%, 23%, 0.2);
+  overflow: hidden;
+}
+
+.card-header {
+  width: 350px;
+  height: 140px;
+  background-image: url("../images/bg-pattern-card.svg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.user-img {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  border: 5px solid white;
+  top: 85px;
+  left: 125px;
+}
+
+.user-info {
+  @include textPad(75px);
+
+  .name {
+    font-weight: $heavyWeight;
+    color: $Verydarkdesaturated;
+    font-size: $textSize;
+  }
+
+  .age {
+    font-weight: $lightWeight;
+    color: $Darkgrayishblue;
+    padding-left: 5px;
+  }
+}
+.city {
+  @include textPad(16px);
+  padding-bottom: 25px;
+  font-weight: $lightWeight;
+  color: $Darkgrayishblue;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.card-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 45px);
+  text-align: center;
+  margin: 0 45px;
+
+  .value {
+    font-weight: $heavyWeight;
+    color: $Verydarkdesaturated;
+    align-self: end;
+    font-size: $textSize;
+  }
+
+  .label {
+    font-weight: $lightWeight;
+    color: $Darkgrayishblue;
+    font-size: 10px;
+    margin-top: 10px;
+  }
+}
+
+.attribution {
+  text-align: center;
+  padding-top: 50px;
+  color: white;
+  z-index: 200;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  a:hover {
+    color: $Verydarkdesaturated;
+    text-decoration: underline;
+  }
 }
