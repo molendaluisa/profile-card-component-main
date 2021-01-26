@@ -1,47 +1,47 @@
 @import "./variables";
 
-body {
+html {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
   height: 100vh;
-  width: 100vw;
-  font-family: $kumbhSans;
+  height: 100vh;
   background-color: $Darkcyan;
-  display: block;
-  margin: 0 auto;
+  background-image: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+  background-repeat: no-repeat, no-repeat;
+  font-family: $kumbhSans;
+  line-height: 1.3;
 
   @include flexCenter();
 }
 
-
-.background-top {
-  position: fixed;
-  left: -250px;
-  top: -550px;
-}
-
-.background-bottom {
-  position: fixed;
-  right: -200px;
-  bottom: -600px;
-  opacity: 0.8;
-}
-
 .card {
-  width: 350px;
-  height: 375px;
+  width: 21.875em;
+  height: 23.4375em;
   position: relative;
   display: block;
   margin: 0;
-  border-radius: 20px;
-  box-sizing: border-box;
+  border-radius: 1.25em;
   background-color: white;
-  box-shadow: 2px 10px 5px hsla(229, 23%, 23%, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   overflow: hidden;
 }
 
 .card-header {
-  width: 350px;
-  height: 140px;
+  width: 21.875em;
+  height: 8.75em;
   background-image: url("../images/bg-pattern-card.svg");
   background-size: cover;
   background-position: center center;
@@ -51,13 +51,13 @@ body {
   position: absolute;
   border-radius: 50%;
   background-color: white;
-  border: 5px solid white;
-  top: 85px;
-  left: 125px;
+  border: 0.3125em solid white;
+  top: 5.3125em;
+  left: 7.8125em;
 }
 
 .user-info {
-  @include textPad(75px);
+  @include textPad(4.6875em);
 
   .name {
     font-weight: $heavyWeight;
@@ -68,24 +68,25 @@ body {
   .age {
     font-weight: $lightWeight;
     color: $Darkgrayishblue;
-    padding-left: 5px;
+    padding-left: 0.3125em;
   }
 }
+
 .city {
-  @include textPad(16px);
-  padding-bottom: 25px;
+  @include textPad(1em);
+  padding-bottom: 1.5625em;
   font-weight: $lightWeight;
   color: $Darkgrayishblue;
-  border-bottom: 1px solid #ccc;
-  font-size: 14px;
+  border-bottom: 0.0625em solid #ccc;
+  font-size: 0.875em;
 }
 
 .card-footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 45px);
+  grid-template-rows: repeat(2, 2.8125em);
   text-align: center;
-  margin: 0 45px;
+  margin: 0 2.8125em;
 
   .value {
     font-weight: $heavyWeight;
@@ -97,16 +98,15 @@ body {
   .label {
     font-weight: $lightWeight;
     color: $Darkgrayishblue;
-    font-size: 10px;
-    margin-top: 10px;
+    font-size: 0.625em;
+    margin-top: 0.625em;
   }
 }
 
 .attribution {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 3.5em;
   color: white;
-  z-index: 200;
 
   a {
     text-decoration: none;
